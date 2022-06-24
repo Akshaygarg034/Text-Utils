@@ -39,14 +39,14 @@ export default function FormText(props) {
                 </div>
                 <button className={`btn my-1 btn-${props.mode === 'dark' ? 'dark' : 'secondary'}`} onClick={changeUpper} disabled = {text.length===0}>Uppercase</button>
                 <button className={`btn my-1 btn-${props.mode === 'dark' ? 'dark' : 'secondary'} mx-2`} onClick={changeLower} disabled = {text.length===0}>Lowercase</button>
-                <button className={`btn my-1 btn-${props.mode === 'dark' ? 'dark' : 'secondary'} mx-2`} onClick={copyText} disabled = {text.length===0}>Copy</button>
                 <button className={`btn my-1 btn-${props.mode === 'dark' ? 'dark' : 'secondary'} mx-2`} onClick={removeExtraSpaces} disabled = {text.length===0}>Remove Extra Spaces</button>
+                <button className={`btn my-1 btn-${props.mode === 'dark' ? 'dark' : 'secondary'} mx-2`} onClick={copyText} disabled = {text.length===0}>Copy</button>
                 <button className="btn my-1 btn-danger mx-2" onClick={clearText} disabled = {text.length===0}>Clear</button>
             </div>
             <div className="container">
                 <h2 className="my-3">Your Text Summary</h2>
-                <p style={{fontWeight: 500, color: props.mode==='dark'?'white':'black'}}>{text.split(' ').filter((element)=>{return element.length!==0}).length} words {text.length} characters</p>
-            <p style={{fontWeight: 500, color: props.mode==='dark'?'white':'black'}}>{0.008 * text.split(' ').filter((element)=>{return element.length!==0}).length} Minutes read</p>
+                <p style={{fontWeight: 500, color: props.mode==='dark'?'white':'black'}}>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words {text.length} characters</p>
+            <p style={{fontWeight: 500, color: props.mode==='dark'?'white':'black'}}>{0.008 * text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Minutes read</p>
         </div>
         </>
     )
