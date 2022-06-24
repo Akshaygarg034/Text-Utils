@@ -17,8 +17,6 @@ export default function FormText(props) {
         props.showAlert('Text cleared', 'success');
     }
     function copyText() {
-        var textToCopy = document.getElementById('myBox');
-        textToCopy.select();
         navigator.clipboard.writeText(text);
         props.showAlert('Copied to Clipboard', 'success');
     }

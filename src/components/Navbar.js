@@ -33,5 +33,5 @@ Navbar.propTypes = {
   title: PropTypes.string.isRequired
 }
 Navbar.defaultProps = {
-  title: "title"
+  title: "Text Utils"
 }
