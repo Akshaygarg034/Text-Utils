@@ -32,13 +32,6 @@ export default function FormText(props) {
     }
 
     const [text, setText] = useState('');
-    var total_words;
-    if (text === '') {
-        total_words = 0;
-    }
-    else {
-        total_words = text.split(' ').length;
-    }
     return (
         <>
             <div className="container">
@@ -54,7 +47,7 @@ export default function FormText(props) {
             </div>
             <div className="container">
                 <h2 className="my-3">Your Text Summary</h2>
-                <p style={{fontWeight: 500, color: props.mode==='dark'?'white':'black'}}>{total_words} words {text.length} characters</p>
+                <p style={{fontWeight: 500, color: props.mode==='dark'?'white':'black'}}>{text.split(' ').filter((element)=>{return element.length!==0}).length} words {text.length} characters</p>
             <p style={{fontWeight: 500, color: props.mode==='dark'?'white':'black'}}>{0.008 * total_words} Minutes read</p>
         </div>
         </>
